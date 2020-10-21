@@ -1,0 +1,32 @@
+{
+  "name": "strv-test-project",
+  "version": "1.0.0",
+  "description": "Back-end engineer test project for STRV",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel Pazderník",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
+    "helmet": "^4.1.1",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@strv/eslint-config-mocha": "^2.2.1",
+    "@strv/eslint-config-node": "^2.2.2",
+    "chai": "^4.2.0",
+    "eslint": "^7.11.0",
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "sinon": "^9.2.0"
+  }
+}
