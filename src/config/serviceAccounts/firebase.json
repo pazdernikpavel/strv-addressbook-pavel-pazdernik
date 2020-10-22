@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "strv-addressbook-pazdernik",
+  "private_key_id": "fc70bdbd769433f172b13d91a8df8949f81da529",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaNteGIq/ozjc2\ns73jiAFCw9KbIWj2sSRbPJwvwBWal4Gy8B6BevHN+CF4HQ44w7sCyLpKWSCtP7sd\nAmuPUpIdkJ5kB/dNlHVTQpBHpZqJBNfPDi93jRoEykeuLchSSz7fHaSOH7x24Aul\nrPWo9HVv6q4b5EPgfLvxVf/cNhsRtxij1LT9ai1Ve3d7/VZ/xH242x69goM5jgDq\nZjgJHqWNA+C+NILHpXALUh9HzxvqHFwJRkvV1ZLSzxpbap0BqF3xV9gNOZvxrSOk\nOmDor3cLmnJPWtr47ytB90cinybtvip71d+Jn10KFfVPklR+tjXfukWuP5b0Fn0z\ntPbuu+1/AgMBAAECggEAQRuIULxSUlLF4tVuBSMFjT+Jqi8n1ochV1e2hT5uoI74\nlihkaLwUXKY20zRJLdQNH3bJl9wbPKncgLnl2WO+Brdo98iZM2rLQfSnX2heXxzp\nVCSkC7BJ3N3d936ixYO5Lo+gStTBR9r9b9we908GSdLl4Sa1NZDT9Gcfl8RMF2Ty\n5LrH5Ylvy66M8zmYEX3GThzRb2As0Bbx8nrbginLjKTMEYj8P/LBk+9ivQvOzMfS\npEuw4TB6JY/oXio6oHZqTnv9yaU+Tm6lJZStxR7d/y58ZPuJfCSnd/pEixeqyq3B\nDFcjx7q66mnvhyetoeBdKtBPD5cAUEzD7napURTiaQKBgQDT/qDCr2ohK0upbj7y\nv6sI3XloYE57WPmy8W3GQ7Looe15+MrVTEp2T8ruVk3cql8pwcoEZmccesZ+cYnU\nM5VgbEHlp6CffFvQ3VjQxpy7IrDfoOE1eO+HZWijTihvwIL1SmLNzwlXqrfPiFxB\nBnsS9XN9PDme0Lk+0YCUrOLwBQKBgQC6OcTeH2TDpQs+VONqFAAIgU9g7VtLpbzD\npdKOf8kmseyMCTstjUbiUWfDrgX2ZpVaNfVquXIwFQKMqkzqypEzv4UjPiVTD+nl\ng+Mmsk9AdPMgDSKpdCLNWhpommKx3NoiyiMoF7uWnNwGVDj7tG0R/b0hI2NVnrIc\nvYmEAKLSswKBgEr9pMKZqLJJDX/G5u+aC5ecOMlKYBjUFahOLSXYZt5SAZ6G+sFP\nNnv5p/B9iReJERbFXYAG9Wympbau1THCeZHdWcYycOhZ5mTRGAzqZSDxmZ3R3Di9\nKgY8QjKagEVf1TON97uUBFsFofYA55l9AGZpe0wO1NcwQIdPNuvg6Ho9AoGBAIIM\na74OwGicboCl+XaP5wIJg6yVtWbbpDohKCyZcpjSMfYNUEVcXr8XyFXvxnwvYWdx\nPSS9ws9vLKudFj/1HHe97LUS5i/eciH0+4F/jjbeNRcR9T3PO6qanMyl2/yH1dHr\nxadvA3KHsmO9F1o3wt+IijaFJw6Y15uYhVsosoxfAoGAPj+TBhOCyrS4Wa1cxYM/\nt8/KJf3KLAulCqGFv+5xw0TXN/Biq2BR+wJABcjzyDzWzY7r1mMbXIjNdXSevFcg\nDvnb2rrVzTx8/6WtS3Dvvbs/0Ijge/btub+uFs0skSq+lvoNAhMnylXwnySojaqx\nPH0yVfuhEdojerEiVZ1y0vw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fudl0@strv-addressbook-pazdernik.iam.gserviceaccount.com",
+  "client_id": "100277845363967038503",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fudl0%40strv-addressbook-pazdernik.iam.gserviceaccount.com"
+}
