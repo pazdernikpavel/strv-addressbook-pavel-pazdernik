@@ -2,4 +2,5 @@
  STRV Test project
 
 ## Deployment
-Target url is https://strv-addressbook-pazdernik.ew.r.appspot.com
+CI/CD pipelines are provided by Gitlab and can be found on https://gitlab.com/pavelpazdernik/strv-addressbook-pavel-pazdernik
+Target service url is https://strv-addressbook-pazdernik.ew.r.appspot.com
