@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://strv-addressbook-pazdernik-pav.ew.r.appspot.com
+HOST: https://strv-addressbook-pazdernik.ew.r.appspot.com
 
 # STRV Test project
 
@@ -18,10 +18,11 @@ STRV test project bringing address book with basic elements of authentication an
 
 + Response 201
 
-    + Headers
+    + Body
     
-            set-cookie: accessToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg; Path=/; Expires=Wed, 21 Oct 2020 17:37:22 GMT; HttpOnly; Secure
-    
+            {
+                "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg"
+            }
 
 ### Sign-in [POST /api/v1/auth/signin]
 
@@ -33,10 +34,11 @@ STRV test project bringing address book with basic elements of authentication an
 
 + Response 200
 
-    + Headers
+    + Body
     
-            set-cookie: accessToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg; Path=/; Expires=Wed, 21 Oct 2020 17:37:22 GMT; HttpOnly; Secure
-    
+            {
+                "accessToken": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg"
+            }
 
 # Group Contact
 
@@ -44,6 +46,10 @@ STRV test project bringing address book with basic elements of authentication an
 ### Create [POST /api/v1/contact]
 
 + Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg
 
     + Attributes
         + `firstName`: `Bruce` (string, required)
