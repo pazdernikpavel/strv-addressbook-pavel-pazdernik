@@ -1,0 +1,20 @@
+runtime: nodejs12
+env: standard
+
+basic_scaling:
+  max_instances: 2
+  idle_timeout: 2m
+
+env_variables:
+  NODE_ENV: "production"
+
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10

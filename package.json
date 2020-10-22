@@ -4,7 +4,10 @@
   "description": "Back-end engineer test project for STRV",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "start:localhost": "NODE_ENV=localhost nodemon src/app.js",
+    "lint": "eslint .",
+    "deploy:local": "gcloud app deploy --appyaml=deploy/app.yaml"
   },
   "author": "Pavel Pazderník",
   "license": "ISC",
@@ -17,7 +20,12 @@
     "express-mongo-sanitize": "^2.0.0",
     "helmet": "^4.1.1",
     "hpp": "^0.2.3",
+    "jsonschema": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9",
     "morgan": "^1.10.0",
+    "validator": "^13.1.17",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {

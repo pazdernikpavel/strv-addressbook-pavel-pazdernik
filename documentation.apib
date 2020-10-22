@@ -1,0 +1,54 @@
+FORMAT: 1A
+HOST: https://strv-addressbook-pazdernik-pav.ew.r.appspot.com
+
+# STRV Test project
+
+STRV test project bringing address book with basic elements of authentication and contact storing in Firebase. Application is being hosted on Google Cloud Platform.
+
+# Group Authentication
+
+
+### Sign-up [POST /api/v1/auth/signup]
+
++ Request (application/json)
+
+    + Attributes
+        + `email`: `email@example.com` (string, required)
+        + `password`: `hVvhrnGP` (string, required)
+
++ Response 201
+
+    + Headers
+    
+            set-cookie: accessToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg; Path=/; Expires=Wed, 21 Oct 2020 17:37:22 GMT; HttpOnly; Secure
+    
+
+### Sign-in [POST /api/v1/auth/signin]
+
++ Request (application/json)
+
+    + Attributes
+        + `email`: `email@example.com` (string, required)
+        + `password`: `hVvhrnGP` (string, required)
+
++ Response 200
+
+    + Headers
+    
+            set-cookie: accessToken=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGNkNTZhMzVmMWQ4M2I3NTI0NGZjNiIsImVtYWlsIjoicGF2ZWxAZGlydHltaW5kcy5nZyIsIm5hbWUiOiJQYXZlbCIsInN1cm5hbWUiOiJQYXpkZXJuw61rIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjAzMzAwMDQyLCJleHAiOjE2MDMzMDE4NDJ9.o7VRIsHt4AY3krQYBxDxDmdvwl6t7jawHE0JwWPIrQdoJSOpc9Q7FqLdZZlf78cIqOJ0-C2r8lGK7odFsMZffg; Path=/; Expires=Wed, 21 Oct 2020 17:37:22 GMT; HttpOnly; Secure
+    
+
+# Group Contact
+
+
+### Create [POST /api/v1/contact]
+
++ Request (application/json)
+
+    + Attributes
+        + `firstName`: `Bruce` (string, required)
+        + `lastName`: `Wayne` (string, required)
+        + `phoneNumber`: `202-555-0042` (string, required)
+        + `address`: `1007 Mountain Drive, Gotham` (string, required)
+
++ Response 201
