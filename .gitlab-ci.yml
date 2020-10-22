@@ -1,9 +1,19 @@
-image: google/cloud-sdk:alpine
-
 stages:
+  - test
   - deploy
 
+testing:
+  image: node:12.19.0-stretch
+  stage: test
+  environment: Production
+  only:
+    - master
+  script:
+    - npm install
+    - npm run test
+
 deploy:
+  image: google/cloud-sdk:alpine
   stage: deploy
   environment: Production
   only:
@@ -12,6 +22,7 @@ deploy:
     - echo $SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
     - gcloud --quiet --project $PROJECT_ID app deploy --appyaml=deploy/app.yaml
+
 
 after_script:
   - rm /tmp/$CI_PIPELINE_ID.json

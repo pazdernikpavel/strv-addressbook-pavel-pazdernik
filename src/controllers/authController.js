@@ -11,7 +11,7 @@ const signUp = catchAsync(async (req, res, next) => {
     password: req.body.password
   }
 
-  validate(userDto.userAuth, input);
+  validate(userDto.signUp, input);
   const token = await authOperations.signUp(input);
 
   res.status(201).json({
@@ -28,7 +28,7 @@ const signIn = catchAsync(async (req, res, next) => {
     password: req.body.password
   }
 
-  validate(userDto.userAuth, input);
+  validate(userDto.signIn, input);
   const token = await authOperations.signIn(input);
 
   res.status(200).json({

@@ -1,6 +1,6 @@
 'use strict'
 
-const userAuth = {
+const signUp = {
   type: 'Object',
   required: true,
   properties: {
@@ -9,6 +9,16 @@ const userAuth = {
   },
 }
 
+const signIn = {
+  type: 'Object',
+  required: true,
+  properties: {
+    email: { type: 'string', required: true },
+    password: { type: 'string', required: true },
+  },
+}
+
 module.exports = {
-  userAuth
+  signIn,
+  signUp
 }

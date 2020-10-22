@@ -7,6 +7,8 @@
     "start": "node src/app.js",
     "start:localhost": "NODE_ENV=localhost nodemon src/app.js",
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "test": "NODE_ENV=test mocha --config .mocharc.js ./tests",
     "deploy:local": "gcloud app deploy --appyaml=deploy/app.yaml"
   },
   "author": "Pavel Pazderník",
@@ -35,7 +37,9 @@
     "chai": "^4.2.0",
     "eslint": "^7.11.0",
     "mocha": "^8.2.0",
+    "mongodb-memory-server": "^6.9.2",
     "nodemon": "^2.0.6",
-    "sinon": "^9.2.0"
+    "sinon": "^9.2.0",
+    "supertest": "^5.0.0"
   }
 }

@@ -59,7 +59,7 @@ module.exports = (err, req, res, _) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.LOGGING === 'true') {
     sendDebugError(err, req, res);
   } else {
     let error = { ...err };

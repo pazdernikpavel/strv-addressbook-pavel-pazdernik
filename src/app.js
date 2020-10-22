@@ -34,8 +34,9 @@ app.use(express.json({ limit: '10kb' }))
 app.use(express.urlencoded({ extended: true, limit: '10kb' }))
 app.use(cookieParser())
 
-// DEV LOGGING
-if (process.env.NODE_ENV !== 'production') {
+// DEV LOGGING 
+
+if (process.env.LOGGING === 'true') {
   app.use(morgan('dev'))
 }
 
@@ -50,8 +51,12 @@ app.all('*', (req, _, next) => {
 app.use(globalErrorHandler);
 
 // DB CONNECTION
-mongoose.connect()
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect()
+}
 
 app.listen(port, () => {
   console.log(`Express server listening on localhost:${port}`)
 })
+
+module.exports = app;
