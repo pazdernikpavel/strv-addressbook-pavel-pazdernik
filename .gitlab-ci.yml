@@ -10,6 +10,7 @@ testing:
     - master
   script:
     - npm install
+    - npm run lint
     - npm run test
 
 deploy:

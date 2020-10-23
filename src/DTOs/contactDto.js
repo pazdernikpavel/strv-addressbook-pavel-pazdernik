@@ -12,5 +12,5 @@ const createContact = {
 }
 
 module.exports = {
-  createContact
+  createContact,
 }

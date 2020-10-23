@@ -1,7 +1,7 @@
 'use strict'
 
-const { assert, expect } = require('chai');
-const validate = require('../../src/utils/validate');
+const { assert, expect } = require('chai')
+const validate = require('../../src/utils/validate')
 
 const carDto = {
   type: 'Object',
@@ -14,31 +14,29 @@ const carDto = {
 }
 
 describe('validate.js', () => {
-
   it('should pass if valid data input is provided', () => {
     const input = {
       name: 'Green car',
       make: 'Nicest cars',
-      doors: 5
-    };
+      doors: 5,
+    }
 
     const fn = () => {
-      validate(carDto, input);
-    };
+      validate(carDto, input)
+    }
 
-    assert.doesNotThrow(fn);
-  });
+    assert.doesNotThrow(fn)
+  })
 
   it('should throw error if invalid data input is provided', () => {
     const input = {
-      name: 'Red truck'
-    };
+      name: 'Red truck',
+    }
 
     const fn = () => {
-      validate(carDto, input);
-    };
+      validate(carDto, input)
+    }
 
     expect(fn).to.throw(Error, 'Invalid input data.')
-  });
-
-});
+  })
+})

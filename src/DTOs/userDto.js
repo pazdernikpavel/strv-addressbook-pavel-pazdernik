@@ -20,5 +20,5 @@ const signIn = {
 
 module.exports = {
   signIn,
-  signUp
+  signUp,
 }

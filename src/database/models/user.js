@@ -23,19 +23,15 @@ const userSchema = new mongoose.Schema({
   toJSON: { virtuals: true },
 })
 
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) {
-    return next()
+userSchema.pre('save', async next => {
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 12)
   }
-
-  this.password = await bcrypt.hash(this.password, 12)
-
   next()
 })
-userSchema.methods.hasProvidedCorrectPassword =
-  async function(passwordToVerify, userPassword) {
-    return await bcrypt.compare(passwordToVerify, userPassword)
-  }
+
+userSchema.methods.hasProvidedCorrectPassword
+  = async (passwordToVerify, userPassword) => await bcrypt.compare(passwordToVerify, userPassword)
 
 const User = mongoose.model('User', userSchema)
 

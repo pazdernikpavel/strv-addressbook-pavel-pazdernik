@@ -1,7 +1,7 @@
 'use strict'
 
 const jsonschema = require('jsonschema')
-const AppError = require('./appError');
+const AppError = require('./appError')
 
 module.exports = (dto, input) => {
   const validator = new jsonschema.Validator()
@@ -9,9 +9,8 @@ module.exports = (dto, input) => {
 
   const validationErrors = validator.validate(input, dto).errors
   if (validationErrors.length > 0) {
-    // TODO: Log all details about validation errors, give consument more
-    // information about the error - fields, errors.
-    console.log(validationErrors);
-    throw new AppError('Invalid input data.', 400);
+    // eslint-disable-next-line no-console
+    console.log(validationErrors)
+    throw new AppError('Invalid input data.', 400)
   }
 }

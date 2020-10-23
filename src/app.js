@@ -4,16 +4,14 @@ const express = require('express')
 const morgan = require('morgan')
 const dotenv = require('dotenv')
 const helmet = require('helmet')
-const cookieParser = require('cookie-parser')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const cors = require('cors')
-const AppError = require('./utils/appError')
 const mongoose = require('./database/mongoose')
 const authRouter = require('./routes/authRoutes')
 const contactRouter = require('./routes/contactRoutes')
-const globalErrorHandler = require('./middlewares/error')
+const errorHandler = require('./middlewares/error')
 
 // ENVIRONMENT CONFIG
 const defaultEnv = 'production'
@@ -32,10 +30,8 @@ app.use(hpp())
 app.use(mongoSanitize())
 app.use(express.json({ limit: '10kb' }))
 app.use(express.urlencoded({ extended: true, limit: '10kb' }))
-app.use(cookieParser())
 
-// DEV LOGGING 
-
+// DEV LOGGING
 if (process.env.LOGGING === 'true') {
   app.use(morgan('dev'))
 }
@@ -45,10 +41,8 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/contact', contactRouter)
 
 // ERROR HANDLING
-app.all('*', (req, _, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404))
-})
-app.use(globalErrorHandler);
+app.all('*', errorHandler.handleNotFoundError)
+app.use(errorHandler.handleGlobalError)
 
 // DB CONNECTION
 if (process.env.NODE_ENV !== 'test') {
@@ -56,7 +50,8 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Express server listening on localhost:${port}`)
 })
 
-module.exports = app;
+module.exports = app

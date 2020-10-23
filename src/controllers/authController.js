@@ -8,34 +8,34 @@ const authOperations = require('../operations/authOperations')
 const signUp = catchAsync(async (req, res, next) => {
   const input = {
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   }
 
-  validate(userDto.signUp, input);
-  const token = await authOperations.signUp(input);
+  validate(userDto.signUp, input)
+  const token = await authOperations.signUp(input)
 
   res.status(201).json({
     status: 'success',
     data: {
-      accessToken: token
-    }
-  });
+      accessToken: token,
+    },
+  })
 })
 
 const signIn = catchAsync(async (req, res, next) => {
   const input = {
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   }
 
-  validate(userDto.signIn, input);
-  const token = await authOperations.signIn(input);
+  validate(userDto.signIn, input)
+  const token = await authOperations.signIn(input)
 
   res.status(200).json({
     status: 'success',
     data: {
-      accessToken: token
-    }
+      accessToken: token,
+    },
   })
 })
 

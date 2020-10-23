@@ -10,11 +10,20 @@ module.exports = {
 
   overrides: [{
     files: [
-      'test/**',
+      'tests/**',
+      'src/**',
     ],
 
     rules: {
       'no-process-env': 'off',
+      'new-cap': 'off',
+      'no-underscore-dangle': 'off',
+      'require-atomic-updates': 'off',
+      'mocha/no-return-from-async': 'off',
+      'no-warning-comments': 'off',
+      'no-unused-vars': ['error', { argsIgnorePattern: 'req|res|next|val' }],
     },
+
+    parser: 'babel-eslint',
   }],
 }

@@ -1,13 +1,13 @@
 'use strict'
 
-const firestore = require('../database/firestore');
+const firestore = require('../database/firestore')
 
-const createContact = async (input) => {
+const createContact = async input => {
   await firestore
     .collection('contacts')
-    .add(input);
-};
+    .add(input)
+}
 
 module.exports = {
-  createContact
-};
+  createContact,
+}

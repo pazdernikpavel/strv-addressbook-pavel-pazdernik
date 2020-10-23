@@ -10,6 +10,7 @@ router
   .route('/')
   .post(
     protect,
-    contactController.createContact);
+    contactController.createContact,
+  )
 
 module.exports = router

@@ -1,39 +1,42 @@
 'use strict'
 
-const mongoose = require('mongoose');
-const { MongoMemoryServer } = require('mongodb-memory-server');
-const mongod = new MongoMemoryServer();
+const mongoose = require('mongoose')
+const { MongoMemoryServer } = require('mongodb-memory-server')
+
+const mongod = new MongoMemoryServer()
 
 const connect = async () => {
-  const uri = await mongod.getUri();
+  const uri = await mongod.getUri()
 
   const mongooseOpts = {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
-  };
+    useFindAndModify: false,
+  }
 
-  await mongoose.connect(uri, mongooseOpts);
+  await mongoose.connect(uri, mongooseOpts)
 }
 
 const closeDatabase = async () => {
-  await mongoose.connection.dropDatabase();
-  await mongoose.connection.close();
-  await mongod.stop();
+  await mongoose.connection.dropDatabase()
+  await mongoose.connection.close()
+  await mongod.stop()
 }
 
-const clearDatabase = async () => {
-  const collections = mongoose.connection.collections;
+const clearDatabase = () => {
+  const collections = mongoose.connection.collections
 
   for (const key in collections) {
-      const collection = collections[key];
-      await collection.deleteMany();
+    if (collections.hasOwnProperty(key)) {
+      const collection = collections[key]
+      collection.deleteMany()
+    }
   }
 }
 
 module.exports = {
   connect,
   closeDatabase,
-  clearDatabase
-};
+  clearDatabase,
+}
