@@ -8,7 +8,10 @@ const authOperations = require('../../src/operations/authOperations');
 
 describe('Auth', () => {
 
-  const user = { email: 'test@email.com', password: '12345678' };
+  const user = {
+    email: 'test@email.com',
+    password: '12345678'
+  };
 
   before(async () => await mongoose.connect());
 
@@ -16,7 +19,7 @@ describe('Auth', () => {
   
   after(async () => await mongoose.closeDatabase());
 
-  context('[POST] /signup', () => {
+  context('[POST] /api/v1/auth/signup', () => {
 
     it('should create new user', async () => {
       const response = await request(app)
@@ -52,7 +55,7 @@ describe('Auth', () => {
 
   });
 
-  context('[POST] /signup', () => {
+  context('[POST] /api/v1/auth/signup', () => {
 
     it('should sign-in and return accessToken', async () => {
       await authOperations.signUp(user);

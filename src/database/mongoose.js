@@ -9,12 +9,15 @@ module.exports = {
       '<PASSWORD>',
       process.env.DATABASE_PASSWORD
     );
-    const connection = mongoose.connect(dbConnectionString, {
+
+    const mongooseOpts = {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
-    });
+      useFindAndModify: false
+    };
+
+    const connection = mongoose.connect(dbConnectionString, mongooseOpts);
 
     connection.then(() => {
       console.log('Connection to MongoDB database was successful!')
