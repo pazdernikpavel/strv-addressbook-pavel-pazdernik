@@ -21,7 +21,7 @@ describe('Contact', () => {
 
   before(async () => await mongoose.connect())
 
-  afterEach(() => mongoose.clearDatabase())
+  afterEach(async () => await mongoose.clearDatabase())
 
   after(async () => await mongoose.closeDatabase())
 
@@ -41,6 +41,7 @@ describe('Contact', () => {
       expect(response.body.message).to
         .equal('Authentication is required for this kind of operation.')
     })
+
     it('should receive bad request if wrong data input is sent', async () => {
       const token = await authOperations.signUp(user)
       const response = await request(app)

@@ -16,7 +16,7 @@ describe('token.js', () => {
     }
 
     const generatedToken = token.generateJWToken(user)
-    expect(generatedToken).to.not.be.null()
+    expect(generatedToken).to.not.be.null
     const payload = await token.decodeJWTToken(generatedToken)
     expect(payload.id).to.equals(user._id)
   })

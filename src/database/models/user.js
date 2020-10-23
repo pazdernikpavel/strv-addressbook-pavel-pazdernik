@@ -4,6 +4,19 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcrypt')
 
+async function hashPassword(next) {
+  if (!this.isModified('password')) {
+    return next()
+  }
+
+  this.password = await bcrypt.hash(this.password, 12)
+  return next()
+}
+
+async function comparePasswords(passwordToVerify, userPassword) {
+  return await bcrypt.compare(passwordToVerify, userPassword)
+}
+
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -23,15 +36,9 @@ const userSchema = new mongoose.Schema({
   toJSON: { virtuals: true },
 })
 
-userSchema.pre('save', async next => {
-  if (this.isModified('password')) {
-    this.password = await bcrypt.hash(this.password, 12)
-  }
-  next()
-})
+userSchema.pre('save', hashPassword)
 
-userSchema.methods.hasProvidedCorrectPassword
-  = async (passwordToVerify, userPassword) => await bcrypt.compare(passwordToVerify, userPassword)
+userSchema.methods.hasProvidedCorrectPassword = comparePasswords
 
 const User = mongoose.model('User', userSchema)
 

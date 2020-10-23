@@ -24,13 +24,13 @@ const closeDatabase = async () => {
   await mongod.stop()
 }
 
-const clearDatabase = () => {
+const clearDatabase = async () => {
   const collections = mongoose.connection.collections
 
   for (const key in collections) {
     if (collections.hasOwnProperty(key)) {
       const collection = collections[key]
-      collection.deleteMany()
+      await collection.deleteMany()
     }
   }
 }

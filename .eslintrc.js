@@ -10,7 +10,6 @@ module.exports = {
 
   overrides: [{
     files: [
-      'tests/**',
       'src/**',
     ],
 
@@ -22,6 +21,21 @@ module.exports = {
       'mocha/no-return-from-async': 'off',
       'no-warning-comments': 'off',
       'no-unused-vars': ['error', { argsIgnorePattern: 'req|res|next|val' }],
+    },
+
+    parser: 'babel-eslint',
+  }, {
+    files: [
+      'tests/**',
+    ],
+
+    rules: {
+      'no-underscore-dangle': 'off',
+      'no-process-env': 'off',
+      'mocha/no-return-from-async': 'off',
+      'no-warning-comments': 'off',
+      'no-unused-expressions': 'off',
+      'no-await-in-loop': 'off',
     },
 
     parser: 'babel-eslint',

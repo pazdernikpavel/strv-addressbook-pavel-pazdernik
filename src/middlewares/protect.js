@@ -30,6 +30,6 @@ module.exports = catchAsync(async (req, res, next) => {
     ))
   }
 
-  req.auth.user = user
+  req.user = user
   return next()
 })

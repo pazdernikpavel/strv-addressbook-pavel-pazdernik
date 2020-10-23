@@ -14,7 +14,7 @@ describe('Auth', () => {
 
   before(async () => await mongoose.connect())
 
-  afterEach(() => mongoose.clearDatabase())
+  afterEach(async () => await mongoose.clearDatabase())
 
   after(async () => await mongoose.closeDatabase())
 
@@ -31,7 +31,7 @@ describe('Auth', () => {
         'data',
       ])
 
-      expect(response.body.data.accessToken).to.not.be.undefined()
+      expect(response.body.data.accessToken).to.not.be.undefined
     })
     it('should return error if user already exists', async () => {
       await authOperations.signUp(user)
@@ -66,8 +66,9 @@ describe('Auth', () => {
         'data',
       ])
 
-      expect(response.body.data.accessToken).to.not.be.undefined()
+      expect(response.body.data.accessToken).to.not.be.undefined
     })
+
     it('should return error if user enter wrong combination', async () => {
       await authOperations.signUp(user)
 
